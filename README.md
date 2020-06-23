@@ -26,6 +26,8 @@ optional arguments:
   --print-cmd-only      Only print the certbot command, don't run it.
   --disable-email-validation
                         Don't attempt to validate the email address.
+  --reload-cmd RELOAD_CMD
+                        Run a command after obtaining the certificate
   --test-cert           Obtain a test certificate from a staging server
 ```
 

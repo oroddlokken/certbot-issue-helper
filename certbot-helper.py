@@ -39,6 +39,10 @@ def main(args):
     if not args.print_cmd_only:
         subprocess.call(certbot_cmd)
 
+        if args.reload_cmd:
+            reload_cmd = args.reload_cmd.split(" ")
+            subprocess.call(reload_cmd)
+
 
 if __name__ == "__main__":
     import argparse
@@ -60,6 +64,8 @@ if __name__ == "__main__":
     parser.add_argument('--disable-email-validation',
                         default=False, action="store_true",
                         help="Don't attempt to validate the email address.")
+    parser.add_argument('--reload-cmd', default=False,
+                        help='Run a command after obtaining the certificate')
 
     parser.add_argument('--test-cert',
                         default=False, action="store_true",
